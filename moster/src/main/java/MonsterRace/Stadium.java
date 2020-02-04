@@ -31,11 +31,9 @@ public class Stadium {
 
     public void movingMonster(Monster monster, int gameCnt) {
         Random random = new Random();
-        int totMove = monster.getTotMove();
         int ranNum = random.nextInt(10);
         if(ranNum > 4){
-            totMove += 1;
-            monster.setTotMove(totMove);
+            monster.setTotMove(monster.getTotMove()+1);
         }
         if(gameCnt > 0){
             movingMonster(monster,gameCnt-1);
