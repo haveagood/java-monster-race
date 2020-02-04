@@ -1,9 +1,9 @@
 package MonsterRace;
 
 public class Monster {
-    private String MonsterID;
+    private int MonsterID;
 
-    public Monster(String MonsterID) {
+    public Monster(int MonsterID) {
         this.MonsterID = MonsterID;
     }
 }

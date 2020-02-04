@@ -7,11 +7,21 @@ public class Stadium {
     private List<Monster> playerList = new ArrayList<>();
     private int gameCnt;
 
-    public void getPlayer(Monster monster) {
-        this.playerList.add(monster);
+    public void playGame(Game game) {
+        initStadium(game);
+
     }
 
-    public void getGameCnt(int gameCnt) {
-        this.gameCnt = gameCnt;
+    public void initStadium(Game game) {
+        int monsterCnt = game.getMonsterCnt();
+        this.gameCnt = game.getGameCnt();
+        for(int i = 0; i < monsterCnt; i++){
+            this.playerList.add(new Monster(i));
+        }
     }
+
+    public void movingMonster() {
+
+    }
+
 }
