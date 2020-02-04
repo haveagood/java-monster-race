@@ -28,7 +28,7 @@ public class Game {
         Game game = new Game();
         game.inputGameInfo.getGameInfo(game);
         game.stadium.playGame(game);
-
+        game.outputGameResult.printResult(game);
     }
 
 }
