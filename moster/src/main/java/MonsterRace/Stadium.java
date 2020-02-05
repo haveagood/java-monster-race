@@ -17,9 +17,11 @@ public class Stadium {
 
     public void initStadium(GameInfo gameInfo) {
         int monsterCnt = gameInfo.getMonsterCnt();
+        List<Monster> tempPlayerList = new ArrayList<>();
         for(int i = 0; i < monsterCnt; i++){
-
+            tempPlayerList.add(new Monster(i));
         }
+        gameInfo.setPlayerList(tempPlayerList);
     }
 
     public void movingMonster(Monster monster, int gameCnt) {
