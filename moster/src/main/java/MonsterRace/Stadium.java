@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Stadium {
-    List<Monster> playerList = new ArrayList<>();
+    List<Monster> monsterList = new ArrayList<>();
 
     public Stadium(int monsterCount, int gameCount) {
         playGame(monsterCount,gameCount);
@@ -13,7 +13,7 @@ public class Stadium {
 
     private void playGame(int monsterCount,int gameCount) {
         makePlayerList(monsterCount);
-        playerList.stream()
+        monsterList.stream()
                 .forEach(monster ->{
                     movingMonster(monster, gameCount);
                 });
@@ -21,7 +21,7 @@ public class Stadium {
 
     private void makePlayerList(int monsterCount) {
         for(int i = 0; i < monsterCount; i++){
-            playerList.add(new Monster(i));
+            monsterList.add(new Monster(i));
         }
     }
 
@@ -37,7 +37,7 @@ public class Stadium {
     }
 
     public void printResult() {
-        playerList.stream()
+        monsterList.stream()
                 .forEach(monster -> {
                     System.out.println(makeDash(monster));
                 });
