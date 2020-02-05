@@ -4,7 +4,7 @@ import java.util.List;
 
 public class OutputGameResult {
 
-    public void printResult(Game game) {
+    public void printResult(GameInfo gameInfo) {
         List<Monster> playerList = game.stadium.getPlayerList();
         playerList.stream()
                 .forEach(monster -> {

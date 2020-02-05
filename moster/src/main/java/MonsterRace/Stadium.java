@@ -5,27 +5,20 @@ import java.util.List;
 import java.util.Random;
 
 public class Stadium {
-    private List<Monster> playerList = new ArrayList<>();
-    private int gameCnt;
 
-    public List<Monster> getPlayerList() {
-        return this.playerList;
-    }
-
-    public void playGame(Game game) {
-        initStadium(game);
-        this.playerList.stream()
+    public void playGame(GameInfo gameInfo) {
+        initStadium(gameInfo);
+        gameInfo.getPlayerList().stream()
                 .forEach(monster ->{
-                    movingMonster(monster,gameCnt);
+                    movingMonster(monster,gameInfo.getGameCnt());
                 });
 
     }
 
-    public void initStadium(Game game) {
-        int monsterCnt = game.getMonsterCnt();
-        this.gameCnt = game.getGameCnt();
+    public void initStadium(GameInfo gameInfo) {
+        int monsterCnt = gameInfo.getMonsterCnt();
         for(int i = 0; i < monsterCnt; i++){
-            this.playerList.add(new Monster(i));
+
         }
     }
 
