@@ -4,6 +4,11 @@ import java.util.List;
 
 public class OutputGameResult {
 
+    public OutputGameResult(GameInfo gameInfo) {
+        printResult(gameInfo);
+    }
+
+
     public void printResult(GameInfo gameInfo) {
         List<Monster> playerList = gameInfo.getPlayerList();
         playerList.stream()
@@ -13,9 +18,9 @@ public class OutputGameResult {
     }
 
     public String makeDash(Monster monster) {
-        int totMove = monster.getTotMove();
+        int totalMove = monster.getTotMove();
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < totMove; i++){
+        for(int i = 0; i < totalMove; i++){
             sb.append("-");
         }
         return sb.toString();

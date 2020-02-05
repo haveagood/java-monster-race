@@ -2,18 +2,18 @@ package MonsterRace;
 
 public class Monster {
     private int monsterID;
-    private int totMove;
+    private int totalMove;
 
     public Monster(int monsterID) {
         this.monsterID = monsterID;
     }
 
     public int getTotMove() {
-        return totMove;
+        return totalMove;
     }
 
     public void setTotMove(int totMove) {
-        this.totMove = totMove;
+        this.totalMove = totMove;
     }
 
     public int getMonsterID() {

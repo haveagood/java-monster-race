@@ -1,16 +1,20 @@
 package MonsterRace;
 
 public class Game {
-    InputGameInfo inputGameInfo = new InputGameInfo();
-    Stadium stadium = new Stadium();
-    OutputGameResult outputGameResult = new OutputGameResult();
+    InputGameInfo inputGameInfo;
+    Stadium stadium;
+    OutputGameResult outputGameResult;
 
     public static void main(String[] args) {
         Game game = new Game();
+        game.start();
+    }
+
+    public void start() {
         GameInfo gameInfo = new GameInfo();
 
-        game.inputGameInfo.getGameInfo(gameInfo);
-        game.stadium.playGame(gameInfo);
-        game.outputGameResult.printResult(gameInfo);
+        inputGameInfo = new InputGameInfo(gameInfo);
+        stadium = new Stadium(gameInfo);
+        outputGameResult = new OutputGameResult(gameInfo);
     }
 }
