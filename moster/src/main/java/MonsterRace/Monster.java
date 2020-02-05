@@ -8,12 +8,12 @@ public class Monster {
         this.monsterID = monsterID;
     }
 
-    public int getTotMove() {
+    public int getTotalMove() {
         return totalMove;
     }
 
-    public void setTotMove(int totMove) {
-        this.totalMove = totMove;
+    public void setTotalMove(int totalMove) {
+        this.totalMove = totalMove;
     }
 
     public int getMonsterID() {
