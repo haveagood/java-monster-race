@@ -13,10 +13,9 @@ public class Stadium {
 
     private void playGame(int monsterCount,int gameCount) {
         makePlayerList(monsterCount);
-        monsters.stream()
-                .forEach(monster ->{
-                    movingMonster(monster, gameCount);
-                });
+        for(int i = 0; i < monsters.size(); i++){
+            movingMonster(monsters.get(i),gameCount);
+        }
     }
 
     private void makePlayerList(int monsterCount) {
@@ -37,11 +36,9 @@ public class Stadium {
     }
 
     public void printResult() {
-//        monsters.stream()
-//                .forEach(monster -> {
-//                    System.out.println(makeDash(monster));
-//                });
-
+        for(int i = 0; i < monsters.size(); i++){
+            System.out.println(makeDash(monsters.get(i)));
+        }
     }
 
     public String makeDash(Monster monster) {
