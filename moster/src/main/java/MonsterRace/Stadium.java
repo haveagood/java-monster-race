@@ -31,7 +31,7 @@ public class Stadium {
         }
     }
 
-    public void moving(Monster monster) {
+    private void moving(Monster monster) {
         Random random = new Random();
         int ranNum = random.nextInt(10);
         if (ranNum > 4) {
@@ -45,7 +45,7 @@ public class Stadium {
         }
     }
 
-    public String makeDash(Monster monster) {
+    private String makeDash(Monster monster) {
         int totalMove = monster.getTotalMove();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < totalMove; i++) {
