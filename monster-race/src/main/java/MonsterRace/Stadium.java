@@ -7,21 +7,24 @@ import java.util.Random;
 public class Stadium {
     List<Monster> monsters = new ArrayList<>();
 
-    public Stadium(int monsterCount, int gameCount) {
+    public Stadium(int monsterCount, int gameCount,List<String[]> monstersNameId) {
+        makePlayerList(monstersNameId);
         playGame(monsterCount, gameCount);
     }
 
     private void playGame(int monsterCount, int gameCount) {
-        makePlayerList(monsterCount);
         for (int i = 0; i < monsters.size(); i++) {
             movingMonster(monsters.get(i), gameCount);
         }
     }
 
-    private void makePlayerList(int monsterCount) {
-        for (int i = 0; i < monsterCount; i++) {
-            monsters.add(new Monster(i));
-        }
+    private void makePlayerList(List<String[]> monstersNameId) {
+        monstersNameId.stream()
+                .forEach(monster ->{
+                    String name = monster[0];
+                    String type = monster[1];
+                    monsters.add(name,type);
+                });
     }
 
     private void movingMonster(Monster monster, int gameCnt) {

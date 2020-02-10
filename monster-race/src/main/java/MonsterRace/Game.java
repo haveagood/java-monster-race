@@ -9,12 +9,12 @@ public class Game {
     Scanner scanner;
     private int monsterCount;
     private int gameCount;
-    private List<String[]> monstersNameId = new ArrayList<>();
+    private List<String[]> monstersNameType = new ArrayList<>();
 
     public Game() {
         scanner = new Scanner(System.in);
         inputMonsterCount();
-        inputMonsterNameId();
+        inputMonsterNameType();
         inputGameCount();
         scanner.close();
     }
@@ -26,7 +26,7 @@ public class Game {
     }
 
     private Stadium createStadium() {
-        return new Stadium(monsterCount, gameCount);
+        return new Stadium(monsterCount, gameCount,monstersNameType);
     }
 
     private void inputMonsterCount() {
@@ -35,11 +35,11 @@ public class Game {
         monsterCount = Integer.parseInt(scanner.nextLine());
     }
 
-    private void inputMonsterNameId() {
+    private void inputMonsterNameType() {
         String monsterNameIdMessage = "경주할 몬스터 이름과 종류를 입력하세요 (쉼표(,)를 기준으로 구분).";
         System.out.println(monsterNameIdMessage);
         for(int i = 0; i < monsterCount; i++) {
-            monstersNameId.add(scanner.nextLine().split(","));
+            monstersNameType.add(scanner.nextLine().split(","));
         }
     }
 
