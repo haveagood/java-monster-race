@@ -17,8 +17,12 @@ public class Game {
 
     public static void main(String[] args) {
         Game game = new Game();
-        Stadium stadium = new Stadium(game.monsterCount, game.gameCount);
+        Stadium stadium = game.createStadium();
         stadium.printResult();
+    }
+
+    private Stadium createStadium() {
+        return new Stadium(monsterCount, gameCount);
     }
 
     private void inputMonsterCount() {
