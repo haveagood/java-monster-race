@@ -9,29 +9,29 @@ public class Stadium {
 
     public Stadium(int monsterCount, int gameCount,List<String[]> monstersNameId) {
         makePlayerList(monstersNameId);
-        playGame(monsterCount, gameCount);
+        playGame(gameCount);
     }
 
-    private void playGame(int monsterCount, int gameCount) {
-        for (int i = 0; i < monsters.size(); i++) {
-            movingMonster(monsters.get(i), gameCount);
+    private void playGame(int gameCount) {
+        for(int i = 0; i < gameCount; i++){
+            movingMonster();
         }
     }
 
     private void makePlayerList(List<String[]> monstersNameId) {
-        monstersNameId.stream()
-                .forEach(monster ->{
+        monstersNameId
+                .forEach(monster -> {
                     String name = monster[0];
                     String type = monster[1];
-                    monsters.add(name,type);
+                    monsters.add(new Monster(name,type));
                 });
     }
 
-    private void movingMonster(Monster monster, int gameCnt) {
-        while (gameCnt > 0) {
-            moving(monster);
-            gameCnt--;
-        }
+    private void movingMonster() {
+        monsters
+                .forEach(monster -> {
+                    moving(monster);
+                });
     }
 
     private void moving(Monster monster) {

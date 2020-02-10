@@ -1,11 +1,13 @@
 package MonsterRace;
 
 public class Monster {
-    private int monsterID;
+    private String monsterName;
+    private String monsterType;
     private int totalMove;
 
-    public Monster(int monsterID) {
-        this.monsterID = monsterID;
+    public Monster(String monsterName, String monsterType) {
+        this.monsterName = monsterName;
+        this.monsterType = monsterType;
     }
 
     public int getTotalMove() {
@@ -15,8 +17,7 @@ public class Monster {
     public void setTotalMove(int totalMove) {
         this.totalMove = totalMove;
     }
-
-    public int getMonsterID() {
-        return this.monsterID;
+    public String getMonsterName() {
+        return monsterName;
     }
 }
