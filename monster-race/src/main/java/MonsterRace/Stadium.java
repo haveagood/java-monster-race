@@ -37,8 +37,20 @@ public class Stadium {
     private void moving(Monster monster) {
         Random random = new Random();
         int ranNum = random.nextInt(10);
-        if (ranNum > 4) {
-            monster.setTotalMove(monster.getTotalMove() + 1);
+        int ranMove = random.nextInt(100)+1;
+        switch (monster.getMonsterType()) {
+            case "달리기":
+                monster.setTotalMove(ranNum - 4,1);
+                break;
+            case "비행":
+                monster.setTotalMove(ranNum - 6,3);
+                break;
+            case "에스퍼":
+                monster.setTotalMove(ranNum - 9,ranMove);
+                break;
+            default:
+                System.out.println("올바르지 않은 타입이네요??");
+                break;
         }
     }
 

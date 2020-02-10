@@ -14,10 +14,16 @@ public class Monster {
         return totalMove;
     }
 
-    public void setTotalMove(int totalMove) {
-        this.totalMove = totalMove;
+    public void setTotalMove(int ranNum,int ranMove) {
+        if(ranNum >= 0){
+            totalMove += ranMove;
+        }
     }
     public String getMonsterName() {
         return monsterName;
+    }
+
+    public String getMonsterType() {
+        return monsterType;
     }
 }
