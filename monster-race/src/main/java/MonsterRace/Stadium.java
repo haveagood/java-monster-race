@@ -1,11 +1,11 @@
 package MonsterRace;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Stadium {
     List<Monster> monsters = new ArrayList<>();
+    List<String> monsterNames = new ArrayList<>();
+    List<Integer> monstertotMoves = new ArrayList<>();
 
     public Stadium(int monsterCount, int gameCount,List<String[]> monstersNameId) {
         makePlayerList(monstersNameId);
@@ -55,18 +55,49 @@ public class Stadium {
     }
 
     public void printResult() {
-        for (int i = 0; i < monsters.size(); i++) {
-            System.out.println(makeDash(monsters.get(i)));
-        }
+        StringBuilder sb = new StringBuilder();
+        List<Integer> monstersMove = new ArrayList<>();
+        monsters.forEach(monster -> {
+            setMonsterNameMove(monster);
+            sb.append(monster.getMonsterName());
+            sb.append(" [");
+            sb.append(monster.getMonsterType());
+            sb.append("] : ");
+            sb.append(makeDash(monster));
+            sb.append("\n");
+        });
+        System.out.println(sb.toString());
+        findWinner();
+
     }
 
-    private String makeDash(Monster monster) {
+    private StringBuilder makeDash(Monster monster) {
         int totalMove = monster.getTotalMove();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < totalMove; i++) {
             sb.append("-");
         }
-        return sb.toString();
+        return sb;
     }
 
+    private void setMonsterNameMove(Monster monster) {
+        monsterNames.add(monster.getMonsterName());
+        monstertotMoves.add(monster.getTotalMove());
+    }
+
+    private void findWinner() {
+        int maxMove = 0;
+        List<String> winners = new ArrayList<>();
+
+        for(int i = 0; i < monstertotMoves.size(); i++){
+            if(monstertotMoves.get(i) > maxMove) {
+                winners.clear();
+                winners.add(monsterNames.get(i));
+                maxMove = monstertotMoves.get(i);
+            }else if(monstertotMoves.get(i) == maxMove){
+                winners.add(monsterNames.get(i));
+            }
+        }
+        System.out.println("최종 승자는 : "+ winners.toString());
+    }
 }
