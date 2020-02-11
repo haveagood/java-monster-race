@@ -1,7 +1,6 @@
 package MonsterRace;
 
 import java.util.*;
-import java.util.regex.Pattern;
 
 import static MonsterRace.MonsterType.*;
 
