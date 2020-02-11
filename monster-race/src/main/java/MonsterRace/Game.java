@@ -24,14 +24,15 @@ public class Game {
     }
 
     private void gameStart() {
-        scanner = new Scanner(System.in);
         String monsterCountMessage = "<스릴만점 건전한 몬스터 경주>\n몬스터는 모두 몇 마리인가요?";
+        String monsterInfoMessage = "경주할 몬스터 이름과 종류를 입력하세요 (쉼표(,)를 기준으로 구분).";
+        String gameCountMessage = "시도할 회수는 몇 회 인가요?";
+        scanner = new Scanner(System.in);
+
         System.out.println(monsterCountMessage);
         monsterCount = inputMonsterCount();
-        String monsterNameIdMessage = "경주할 몬스터 이름과 종류를 입력하세요 (쉼표(,)를 기준으로 구분).";
-        System.out.println(monsterNameIdMessage);
+        System.out.println(monsterInfoMessage);
         inputMonsterInfo();
-        String gameCountMessage = "시도할 회수는 몇 회 인가요?";
         System.out.println(gameCountMessage);
         gameCount = inputGameCount();
         scanner.close();

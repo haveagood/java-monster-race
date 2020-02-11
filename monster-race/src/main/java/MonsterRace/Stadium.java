@@ -22,9 +22,9 @@ public class Stadium {
     private void makePlayerList(List<String[]> monstersNameId) {
         monstersNameId
                 .forEach(monster -> {
-                    String name = monster[0];
-                    String type = monster[1];
-                    monsters.add(makeMonsterClass(name, type));
+                    String monsterName = monster[0];
+                    String monsterType = monster[1];
+                    monsters.add(makeMonsterClass(monsterName, monsterType));
                 });
     }
 
