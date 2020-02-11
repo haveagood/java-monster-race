@@ -33,7 +33,7 @@ public class Game {
         inputMonsterInfo();
         String gameCountMessage = "시도할 회수는 몇 회 인가요?";
         System.out.println(gameCountMessage);
-        inputGameCount();
+        gameCount = inputGameCount();
         scanner.close();
     }
 
@@ -81,8 +81,18 @@ public class Game {
         return checkMonsterInfo();
     }
 
-    private void inputGameCount() {
-        gameCount = Integer.parseInt(scanner.nextLine());
+    private int inputGameCount() {
+        String gameCountErrorMessage = "올바르지 않은 값이 입력되되었습니다.\n시도 횟수는 몇회 인가요?";
+        int tempGameCount;
+        try {
+            tempGameCount = Integer.parseInt(scanner.nextLine());
+            if (tempGameCount <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(gameCountErrorMessage);
+            return inputGameCount();
+        }
+        return tempGameCount;
     }
-
 }

@@ -97,6 +97,7 @@ public class Stadium {
                 winners.add(monsterNames.get(i));
             }
         }
-        System.out.println("최종 승자는 : " + winners.toString() + "입니다.");
+        String winner = winners.toString();
+        System.out.println("축하합니다 ! " + winner.substring(1,winner.length()-1) + "가 몬스터 레이스의 우승자 입니다.");
     }
 }
