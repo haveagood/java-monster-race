@@ -1,7 +1,6 @@
 package MonsterRace;
 
 import java.util.*;
-
 import static MonsterRace.MonsterType.*;
 
 public class Stadium {
@@ -9,7 +8,7 @@ public class Stadium {
     List<String> monsterNames = new ArrayList<>();
     List<Integer> monstertotMoves = new ArrayList<>();
 
-    public Stadium(int monsterCount, int gameCount, List<String[]> monstersNameId) {
+    public Stadium(int gameCount, List<String[]> monstersNameId) {
         makePlayerList(monstersNameId);
         playGame(gameCount);
     }
@@ -57,7 +56,6 @@ public class Stadium {
 
     public void printResult() {
         StringBuilder sb = new StringBuilder();
-        List<Integer> monstersMove = new ArrayList<>();
         monsters.forEach(monster -> {
             setMonsterNameMove(monster);
             sb.append(monster.getMonsterName());
@@ -99,6 +97,6 @@ public class Stadium {
                 winners.add(monsterNames.get(i));
             }
         }
-        System.out.println("최종 승자는 : " + winners.toString());
+        System.out.println("최종 승자는 : " + winners.toString() + "입니다.");
     }
 }
