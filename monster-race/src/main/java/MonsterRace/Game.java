@@ -26,7 +26,7 @@ public class Game {
     }
 
     private Stadium createStadium() {
-        return new Stadium(monsterCount, gameCount,monstersNameType);
+        return new Stadium(monsterCount, gameCount, monstersNameType);
     }
 
     private void inputMonsterCount() {
@@ -38,7 +38,7 @@ public class Game {
     private void inputMonsterNameType() {
         String monsterNameIdMessage = "경주할 몬스터 이름과 종류를 입력하세요 (쉼표(,)를 기준으로 구분).";
         System.out.println(monsterNameIdMessage);
-        for(int i = 0; i < monsterCount; i++) {
+        for (int i = 0; i < monsterCount; i++) {
             monstersNameType.add(scanner.nextLine().split(","));
         }
     }

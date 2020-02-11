@@ -1,29 +1,22 @@
 package MonsterRace;
 
-public class Monster {
-    private String monsterName;
-    private String monsterType;
-    private int totalMove;
+public abstract class Monster {
+    public String monsterName;
+    public String monsterType;
+    public int totalMonsterMove;
 
-    public Monster(String monsterName, String monsterType) {
-        this.monsterName = monsterName;
-        this.monsterType = monsterType;
-    }
 
     public int getTotalMove() {
-        return totalMove;
-    }
-
-    public void setTotalMove(int ranNum,int ranMove) {
-        if(ranNum >= 0){
-            totalMove += ranMove;
-        }
-    }
-    public String getMonsterName() {
-        return monsterName;
+        return totalMonsterMove;
     }
 
     public String getMonsterType() {
         return monsterType;
     }
+
+    public String getMonsterName() {
+        return monsterName;
+    }
+
+    public abstract void setTotalMonsterMove(int ranNum);
 }
